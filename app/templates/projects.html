@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Projects</title>
+</head>
+<body>
+    <header>
+        <h1>My Projects</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/projects">Projects</a>
+            <a href="/resume">Resume</a>
+        </nav>
+    </header>
+    <main>
+        <ul>
+            {% for project in projects %}
+            <li>
+                <h3>{{ project.name }}</h3>
+                <p>{{ project.description }}</p>
+                <a href="{{ project.link }}" target="_blank">View Project</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </main>
+</body>
+</html>
