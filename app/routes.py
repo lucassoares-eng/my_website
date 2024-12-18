@@ -1,16 +1,12 @@
-from flask import Blueprint, render_template, send_from_directory
+from flask import Blueprint, render_template
 
 # Definir o Blueprint
 routes_bp = Blueprint("main_routes", __name__)
 
-@routes_bp.route('/static/<filename>')
-def serve_static(filename):
-    return send_from_directory('static', filename)
-
 # Página inicial
 @routes_bp.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('home.html')
 
 # Página de projetos
 @routes_bp.route('/projects')
