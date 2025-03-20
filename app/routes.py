@@ -1,4 +1,5 @@
-from flask import Blueprint, render_template
+import os
+from flask import Blueprint, render_template, send_from_directory
 
 # Definir o Blueprint
 routes_bp = Blueprint("main_routes", __name__)
@@ -21,3 +22,8 @@ def projects():
 @routes_bp.route('/resume')
 def resume():
     return render_template('resume.html')
+
+# Rota para servir o arquivo PDF
+@routes_bp.route('/Resume.pdf')
+def serve_resume():
+    return send_from_directory(os.path.join("static"), "Resume.pdf")
