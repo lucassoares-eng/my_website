@@ -3,21 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucas Soares | Home</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-    <title>Welcome</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
     <header>
-        <h1>Welcome to My Website</h1>
         <nav>
-            <a href="/">Home</a>
-            <a href="/projects">Projects</a>
-            <a href="/resume">Resume</a>
+            <h1 class="logo">Lucas Soares</h1>
+            <ul>
+                <li><a href="/" class="active">Home</a></li>
+                <li><a href="https://github.com/lucassoares-eng">Projects</a></li>
+                <li><a href="https://lucasjs.com/Resume.pdf">Resume</a></li>
+            </ul>
         </nav>
     </header>
+
     <main>
-        <h2>Hello!</h2>
-        <p>Welcome to my personal website. Explore my projects and resume.</p>
+        <section class="hero">
+            <img src="{{ url_for('static', filename='images/capa.jpg') }}" alt="Big Data Analytics" class="hero-image">
+            <div class="hero-content">
+                <h2>Welcome to My Personal Website</h2>
+                <p>Explore my projects, learn more about my experience, and connect with me.</p>
+                <a href="https://github.com/lucassoares-eng" class="btn">View Projects</a>
+            </div>
+        </section>
+
+        <section class="about">
+            <img src="{{ url_for('static', filename='images/profile.jpeg') }}" alt="Lucas Soares">
+            <div>
+                <h2>About Me</h2>
+                <p>
+                    Hi, I'm Lucas!
+                </p>  
+                <p>
+                    With over 15 years of experience in Project Management, Operations, Strategic Planning, and Continuous Improvement, I’ve led teams to drive growth through innovation and operational excellence.
+                </p>
+                <p>
+                    I'm passionate about technology and business optimization, specializing in <strong>Python</strong>, <strong>Data Analysis</strong>, and <strong>Artificial Intelligence</strong>.
+                </p>             
+                <p>
+                    Feel free to check out my work and reach out if you want to collaborate!
+                </p>
+                <div class="social-links">
+                    <a href="https://github.com/lucassoares-eng" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/lucas-soares-33486b42/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:lucasjs.eng@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </section>
     </main>
+
+    <div class="footer-container">
+        <a>
+            <img src="{{ url_for('static', filename='images/footer.svg') }}" class="footer-image"/>
+        </a>
+    </div>
 </body>
 </html>
