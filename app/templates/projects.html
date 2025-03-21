@@ -4,27 +4,126 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-    <title>Projects</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>My Projects</title>
 </head>
 <body>
+
     <header>
-        <h1>My Projects</h1>
         <nav>
-            <a href="/">Home</a>
-            <a href="/projects">Projects</a>
-            <a href="/resume">Resume</a>
+            <h1 class="logo">Lucas Soares</h1>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/projects" class="active">Projects</a></li>
+                <li><a href="/Resume.pdf">Resume</a></li>
+            </ul>
         </nav>
     </header>
-    <main>
-        <ul>
-            {% for project in projects %}
-            <li>
-                <h3>{{ project.name }}</h3>
-                <p>{{ project.description }}</p>
-                <a href="{{ project.link }}" target="_blank">View Project</a>
-            </li>
-            {% endfor %}
-        </ul>
-    </main>
+
+<section class="projects-container">
+    <h2 class="projects-title">My Projects</h2>
+    <div class="projects-grid">
+        
+        <!-- Projeto 1 -->
+        <div class="project-card">
+            <a href="https://github.com/lucassoares-eng/company-credit-assessment">
+                <img src="{{ url_for('static', filename='images/project1.png') }}" alt="Project 1">
+            </a>
+            <h3 class="project-title">Company Credit Assessment API</h3>
+            <p class="project-description">
+                Python-based API for analyzing Brazilian companies' credit scores using public data sources. Built with Flask, it provides endpoints for retrieving CNPJ details, reputation analysis, social media metrics, and government contracts.
+            </p>
+
+            <div class="project-buttons">
+                <a class="project-icons">
+                    <img src="https://skillicons.dev/icons?i=python,selenium,flask,instagram"/>
+                </a>
+            </div>
+
+            <div class="project-buttons">
+                <a href="https://github.com/lucassoares-eng/company-credit-assessment" class="project-button" target="_blank">
+                    <i class="fab fa-github"></i> Source Code
+                </a>
+            </div>
+        </div>
+
+        <!-- Projeto 2 -->
+        <div class="project-card">
+            <a href="https://lucasjs.com/sentiment-analysis/">
+                <img src="{{ url_for('static', filename='images/project2.png') }}" alt="Project 1">
+            </a>
+            <h3 class="project-title">Sentiment Analysis Application</h3>
+            <p class="project-description">
+                A Python-based project that classifies text (e.g., product reviews) as positive, negative, or neutral using natural language processing (NLP) techniques. The application calculates metrics such as the Net Promoter Score (NPS), identifies common words in reviews, and extracts the most relevant positive and negative comments. Results are dynamically visualized on an intuitive, modern homepage.
+            </p>
+
+            <div class="project-buttons">
+                <a class="project-icons">
+                    <img src="https://skillicons.dev/icons?i=ai,python,sklearn,flask,js,html,css"/>
+                </a>
+            </div>
+
+            <div class="project-buttons">
+                <a href="https://github.com/lucassoares-eng/sentiment_analysis" class="project-button" target="_blank">
+                    <i class="fab fa-github"></i> Source Code
+                </a>
+            </div>
+        </div>
+
+        <!-- Projeto 3 -->
+        <div class="project-card">
+            <a href="https://lucasjs-house-price-prediction.streamlit.app/">
+                <img src="{{ url_for('static', filename='images/project3.png') }}" alt="Project 1">
+            </a>
+            <h3 class="project-title">House Price Prediction</h3>
+            <p class="project-description">
+                A machine learning project to predict house prices using various regression algorithms and a neural network for performance comparison. The project explores different models to determine the best-performing one based on accuracy metrics.
+            </p>
+
+            <div class="project-buttons">
+                <a class="project-icons">
+                    <img src="https://skillicons.dev/icons?i=ai,python,sklearn,tensorflow"/>
+                </a>
+            </div>
+
+            <div class="project-buttons">
+                <a href="https://github.com/lucassoares-eng/house-price-prediction" class="project-button" target="_blank">
+                    <i class="fab fa-github"></i> Source Code
+                </a>
+            </div>
+        </div>
+
+        <!-- Projeto 4 -->
+        <div class="project-card">
+            <a href="https://pypi.org/project/recaptchav2solver/">
+                <img src="{{ url_for('static', filename='images/project4.gif') }}" alt="Project 1">
+            </a>
+            <h3 class="project-title">ReCAPTCHASolver: Automate reCAPTCHA Audio Challenges</h3>
+            <p class="project-description">
+                ReCAPTCHASolver is a Python package that automates the process of solving Google's reCAPTCHA using audio challenges. It utilizes Selenium for web automation, requests for downloading audio files, and Google Speech Recognition for transcription.
+            </p>
+
+            <div class="project-buttons">
+                <a class="project-icons">
+                    <img src="https://skillicons.dev/icons?i=ai,python,selenium"/>
+                </a>
+            </div>
+
+            <div class="project-buttons">
+                <a href="https://github.com/lucassoares-eng/python-recaptchav2solver" class="project-button" target="_blank">
+                    <i class="fab fa-github"></i> Source Code
+                </a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<div class="footer-container">
+    <a>
+        <img src="{{ url_for('static', filename='images/footer.svg') }}" class="footer-image"/>
+    </a>
+</div>
+
 </body>
 </html>
