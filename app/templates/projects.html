@@ -11,8 +11,13 @@
 
     <header>
         <nav>
-            <h1 class="logo">Lucas Soares</h1>
-            <ul>
+            <a href="/" style="text-decoration: none;">
+                <h1 class="logo">Lucas Soares</h1>
+            </a>
+            <button class="menu-toggle" id="menu-toggle">
+                <i class="fas fa-bars"></i> <!-- Ícone de três barras -->
+            </button>
+            <ul id="nav-menu">
                 <li><a href="/">Home</a></li>
                 <li><a href="/projects" class="active">Projects</a></li>
                 <li><a href="/Resume.pdf">Resume</a></li>
@@ -124,6 +129,6 @@
         <img src="{{ url_for('static', filename='images/footer.svg') }}" class="footer-image"/>
     </a>
 </div>
-
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>

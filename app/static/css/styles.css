@@ -7,7 +7,7 @@ body {
     padding: 0;
     background: #F8F5FF; /* Tom suave para combinar com #B090EC */
     color: #333;
-    padding-top: 50px; /* Ajuste conforme a altura do header */
+    padding-top: 30px; /* Ajuste conforme a altura do header */
 }
 
 /* ======= HEADER ======= */
@@ -64,6 +64,12 @@ nav ul li a:hover, .active {
     position: relative;
     text-align: center;
     color: white;
+    min-height: 30vh; /* Aumenta a altura mínima para comportar o conteúdo */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
 }
 
 .hero-image {
@@ -162,6 +168,148 @@ footer {
 .footer-image {
     width: 100%;
     display: block;
+}
+
+/* ========================= */
+/* RESPONSIVIDADE GERAL */
+/* ========================= */
+
+/* Estilos para o menu hambúrguer */
+.menu-toggle {
+    display: none; /* Esconde no desktop */
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    /* Reduzindo o padding do body para evitar deslocamento */
+    body {
+        padding-top: 50px;
+    }
+
+    /* Oculta a lista de navegação por padrão */
+    #nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: #333;
+        position: absolute;
+        top: 35px; /* Abaixo do header */
+        left: 0;
+        text-align: center;
+        padding: 10px 0;
+    }
+    /* Exibe o botão do menu */
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Estiliza os links do menu para ocupar toda a largura */
+    #nav-menu li {
+        padding: 10px 0;
+    }
+
+    /* Mostra o menu quando ativado */
+    #nav-menu.active {
+        display: flex;
+    }
+
+    /* Ajuste do Hero Section */
+    .hero {
+        min-height: 25vh; /* Ajusta para telas menores */
+    }
+
+    .hero-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Faz a imagem ocupar todo o espaço disponível sem distorcer */
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1; /* Coloca a imagem no fundo */
+    }
+
+    .hero-content {
+        width: 80%;
+        max-width: 800px;
+        padding: 15px;
+    }
+
+    /* Ajuste da seção About */
+    .about {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 20px;
+    }
+
+    .about img {
+        margin-bottom: 20px;
+    }
+
+    /* Ajuste dos projetos (2 colunas -> 1 coluna) */
+    .projects-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-card {
+        width: 90%; /* Ocupa quase toda a largura da tela */
+    }
+
+    /* Ajuste dos ícones de tecnologia */
+    .project-icons {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    /* Ajuste do footer */
+    .footer-container {
+        text-align: center;
+    }
+
+    .footer-image {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Reduzindo o padding do body para evitar deslocamento */
+    body {
+        padding-top: 40px;
+    }
+
+    /* Ajuste do Header */
+    header {
+        padding: 10px;
+    }
+
+    /* Ajuste dos botões */
+    .btn {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+
+    /* Ajuste do texto do hero */
+    .hero h2 {
+        font-size: 22px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    /* Ajuste da seção About */
+    .about img {
+        width: 180px;
+        height: 180px;
+    }
 }
 
 .btn {
